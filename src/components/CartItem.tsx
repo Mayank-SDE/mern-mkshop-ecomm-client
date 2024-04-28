@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
 import { server } from '../redux/store';
 import { CartItem } from '../types/types';
-type CartItesmProps = {
+type CartItemProps = {
     cartItem: CartItem;
     incrementHandler: (cartItem: CartItem) => void;
     decrementHandler: (cartItem: CartItem) => void;
     removeHandler: (id: string) => void;
 };
 
-const CartItem = ({ cartItem, incrementHandler, decrementHandler, removeHandler }: CartItesmProps) => {
+const CartItemCard = ({ cartItem, incrementHandler, decrementHandler, removeHandler }: CartItemProps) => {
     const { productId, name, price, quantity } = cartItem;
     return (
         <div className="cart-item">
@@ -31,4 +31,4 @@ const CartItem = ({ cartItem, incrementHandler, decrementHandler, removeHandler 
     )
 }
 
-export default CartItem
+export default CartItemCard
